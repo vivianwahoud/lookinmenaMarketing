@@ -1,0 +1,954 @@
+<html oncopy="return true" oncut="return false" onpaste="return false">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+    <meta name="keywords" content="">
+    <meta name="google-site-verification" content="K_8JzqRwbWX8hCJeO2r1OaT4Gl9koXVpWG_DwXABsHs" />
+
+    <meta name="description" content="Spread the love">
+    <meta property="og:description" content="Spread the love" />
+    <meta property="og:title" content="test grants &#8211; " />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Look In MENA" />
+
+    <meta property="fb:app_id" content="325859175013010" />
+    <meta property="fb:pages" content="221965491295323" />
+
+    <title>
+        test grants &#8211; LookinMENA </title>
+
+    <!-- FAVICON AND APPLE TOUCH -->
+    <link rel="shortcut icon" href="https://lookinmena.com/wp-content/themes/lookinmena/assets/images/favicon.png">
+
+    <!-- FONTS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+
+
+    <!-- ALL NORMAL STYLES IN LIM -->
+    <link rel="stylesheet" href="https://lookinmena.com/wp-content/themes/lookinmena/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="https://lookinmena.com/wp-content/themes/lookinmena/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://lookinmena.com/wp-content/themes/lookinmena/assets/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://lookinmena.com/wp-content/themes/lookinmena/assets/plugins/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" href="https://lookinmena.com/wp-content/themes/lookinmena/assets/plugins/animations/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/custom.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113878674-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-113878674-1');
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+
+    <script type="text/javascript" src="https://lookinmena.com/wp-content/themes/lookinmena/assets/js/mini_lib.js?v1.07"></script>
+    <script type="text/javascript" src="https://lookinmena.com/wp-content/themes/lookinmena/assets/js/mini_app.js?v1.13"></script>
+
+    <script src="https://lookinmena.com/wp-content/themes/lookinmena/front_end/controllers/scholarships/scholarships_tax.js"></script>
+    <script src="https://lookinmena.com/wp-content/themes/lookinmena/front_end/controllers/online_activities/online_activities_tax.js"></script>
+
+    <!-- schema JSON -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://www.lookinmena.com/",
+            "image": "https://lookinmena.com/wp-content/uploads/2019/06/27749772_893968124095053_4653836304646177791_n.png",
+            "sameAs": [
+                "https://www.facebook.com/lookinmena",
+                "https://twitter.com/lookinmena",
+                "https://www.youtube.com/channel/UC1cGjsNSSh9a_xiFEctxeVg",
+                "https://www.linkedin.com/company/lookinmena/"
+            ],
+            "potentialAction": [{
+                "@type": "SearchAction",
+                "target": "https://lookinmena.com/post_search/?word={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }]
+        }
+    </script>
+
+
+</head>
+
+<body class="sticky-header header-white scrollbar_style" ng-app="lim" id="scrollbar_style">
+    <div id="main-container" ng-controller="main_controller">
+        <div id="main-header">
+            <!-- HEADER -->
+            <nav class="navbar  navbar-fixed-top desktophomepage " id="sticky-header " style="background-color: #ffff;">
+                <div class="container">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                <a href="https://lookinmena.com">
+                                    <img src="https://lookinmena.com/wp-content/themes/lookinmena/assets/images/favicon.png" alt="lookinMENA logo" width="{{is_logged_in ? '100px' : 'auto'}}">
+                                </a>
+                            </div>
+
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav">
+                                    <a id="mobile-menu-button" class="waves" href="#"><i class="fa fa-angle-down"></i></a>
+                                    <ul class="menu clearfix" id="menu">
+
+                                        <!-- ngIf: !is_logged_in -->
+                                        <li class="login m-t-7" ng-if="!is_logged_in">
+                                            <!--<a id="sign_in" class="btn bordered" href="#login-form-container">أنشئ حساب</a>-->
+                                            <a id="sign_in" class="btn bordered" href="#login-form-container">أنشئ حساب</a>
+                                            <div id="login-form-container">
+                                                <!--<h4 style="box-shadow: 0px 2px 5px 1px grey; background-color: #002626"> إنشاء حساب مجاني</h4>-->
+                                                <h4 style="box-shadow: 0px 2px 5px 1px grey; background-color: #002626">إنشاء حساب مجاني</h4>
+                                                <form class="login-form ng-pristine ng-valid">
+                                                    <fieldset>
+                                                        <!--<h5>عند إنشاء حساب سيصبح بإمكانك</h5><br>-->
+                                                        <h5>عند إنشاء حساب سيصبح بإمكانك</h5><br>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="bell-style"><i class="fa fa-bell"></i></div>
+                                                                <!--<h6 class="h6h6">تحديد الاشعارات التي ترغب باستلامها</h6>-->
+                                                                <h6 class="h6h6">تحديد الاشعارات التي ترغب باستلامها</h6>
+                                                            </div>
+                                                            <div class="col-sm-6">
+
+                                                                <div class="pointer-style"><i class="fa fa-mouse-pointer"></i></div>
+                                                                <!--<h6 class="h6h6">معرفة طريقة المشاركة بالفرص التعليمية والترفيهية </h6>-->
+                                                                <h6 class="h6h6">معرفة طريقة المشاركة بالفرص التعليميةوالترفيهية</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div class="loglog">
+                                                            <!--<button class="btn btn-default-1 waves fbColor" ng-click="fb_log()"> أنشئ حساباً عن طريق الفيسبوك <i class="fa fa-facebook"></i></button>
+                                                                <button class="btn btn-default-1 waves gmColor" ng-click="gm_log()" style="background-color: #bb4232;"> أنشئ حساباً عن طريق الجيميل <i class="fa fa-google"></i></button>-->
+                                                            <button class="btn btn-default-1 waves fbColor" ng-click="fb_log()"> أنشئ حساباً عن طريق الفيسبوك <i class="fa fa-facebook"></i></button>
+                                                            <button class="btn btn-default-1 waves gmColor" ng-click="gm_log()" style="background-color: #bb4232;"> أنشئ حساباً عن طريق الجيميل <i class="fa fa-google"></i></button>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                            <!-- login-form-container -->
+                                        </li>
+                                        <!-- end ngIf: !is_logged_in -->
+
+                                        <!--profile dropdown-->
+                                        <li class="profile-dropdown" ng-if="is_logged_in">
+
+                                            <button class="btn btn-default-1 waves" type="button" data-toggle="dropdown"><img style="width: 50px;" ng-src="{{user_pic}}"> {{user_name}}
+                                                </button>
+                                            <ul class="dropdown-menu">
+                                                <!--<li><a href="/profile">حسابك</a>-->
+                                                <li><a href="/profile">حسابك</a>
+                                                </li>
+                                                <!--<li><a class="hand" ng-click="logout_user()">تسجيل الخروج</a>-->
+                                                <li><a class="hand" ng-click="logout_user()">تسجيل الخروج</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <!--notifications dropdown-->
+                                        <li class="notification-dropdown" ng-if="is_logged_in">
+                                            <button class="btn btn-default-1 waves" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html" ng-click="view_noti()">
+                                                    <i class="red_bill" aria-hidden="true" ng-class="{'fa fa-bell-o':unseen_noti == 0, 'fa fa-bell':unseen_noti != 0}">{{unseen_noti != 0?unseen_noti:''}}</i>
+                                                </button>
+
+                                            <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel" style="height: 450px;">
+                                                <div class="notification-heading">
+                                                    <!--<h5 class="menu-title">اشعارات</h5>-->
+                                                    <h5 class="menu-title">اشعارات</h5>
+                                                </div>
+                                                <li class="divider"></li>
+                                                <div id="scrollbar_style" class="notifications-wrapper" style="overflow: auto;height: 85%">
+                                                    <div ng-repeat="noti in user_notifications| orderBy: 'post_created': true" ng-class="{'not_opened': noti.post_opened == 0}">
+                                                        <a href="{{noti.post_link}}" ng-click="open_noti(noti, $index)">
+                                                            <div class="notification-item">
+                                                                <span class="item-title" ng-bind-html="noti.post_title"></span> <small>({{noti.post_type}})</small>
+                                                            </div>
+                                                        </a>
+                                                        <li class="divider"></li>
+
+                                                    </div>
+
+                                                </div>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </ul>
+
+
+
+                                <!--المسابقات -->
+                                <!--<ul class="nav navbar-nav">
+                                            <li class="dropdown">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                            aria-haspopup="true" aria-expanded="false">المسابقات<span
+                                                                    class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                            <li><a href="#">التصوير</a></li>
+                                                            <li><a href="#">التصميم والرسم</a></li>
+                                                            <li><a href="#">الأفلام</a></li>
+                                                            <li><a href="#">الكتابة والشعر</a></li>
+                                                            <li><a href="#">الهندسة</a></li>
+
+                                                            <li><a href="#">مسابقات أخرى</a></li>
+
+
+                                                    </ul>
+                                            </li>
+                                    </ul>-->
+
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <!--<a href="https://lookinmena.com/online_activities_categories/all/" >المسابقات</a>-->
+                                        <a href="https://lookinmena.com/online_activities_categories/all/"> المسابقات العالمية</a>
+                                    </li>
+                                </ul>
+
+                                <!--المسابقات -->
+                                <!--المنح -->
+
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+
+                                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                    aria-haspopup="true" aria-expanded="false">المنح الجامعية <span
+                                                            class="caret"></span></a>-->
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">المنح الجامعية<span
+                                                    class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <!--<li><a
+                                                                href="https://lookinmena.com/scholarships_categories/%D8%A8%D9%83%D8%A7%D9%84%D9%88%D8%B1%D9%8A%D9%88%D8%B3">بكالوريوس</a>
+                                                </li>-->
+                                            <li><a href="https://lookinmena.com/scholarships_categories/%D8%A8%D9%83%D8%A7%D9%84%D9%88%D8%B1%D9%8A%D9%88%D8%B3">بكالوريوس</a>
+                                            </li>
+                                            <!--<li><a href="https://lookinmena.com/scholarships_categories/master">ماجستير</a>-->
+                                            <li><a href="https://lookinmena.com/scholarships_categories/master">ماجستير</a>
+                                            </li>
+                                            <!--<li><a
+                                                                href="https://lookinmena.com/scholarships_categories/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%D8%A7%D9%87">دكتوراه</a>
+                                                </li>-->
+                                            <li><a href="https://lookinmena.com/scholarships_categories/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%D8%A7%D9%87">دكتوراه</a>
+                                            </li>
+
+                                            <li role="separator" class="divider"></li>
+                                            <!--<li><a href="https://lookinmena.com/universities-profile">جامعات
+                                                                                        ال MENA</a></li>-->
+                                            <li><a href="https://lookinmena.com/universities-profile"> جامعات الـ MENA</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <!--المنح -->
+                                <!--المقالات -->
+                                <ul class="nav navbar-nav">
+
+                                    <!--<li><a class="nav-link" href="https://lookinmena.com/articles/">مقالات</a></li>-->
+                                    <li><a class="nav-link" href="https://lookinmena.com/articles/">مقالات</a></li>
+
+                                </ul>
+                                <!--المقالات -->
+                                <!--من نحن -->
+                                <ul class="nav navbar-nav">
+
+                                    <!--<li><a class="nav-link" href="https://lookinmena.com/team_members/">من نحن</a></li>-->
+                                    <li><a class="nav-link" href="https://lookinmena.com/team_members/">من نحن</a></li>
+
+                                </ul>
+                                <ul class="nav navbar-nav">
+                                    <li><a class="nav-link link-button" id="lang_en" onclick="change_language(2)">English</a></li>
+                                </ul>
+                                <!--من نحن -->
+                                <!--البحث -->
+
+
+
+                                <!--البحث -->
+
+
+                                <!-- row -->
+
+
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- container -->
+
+            </nav>
+            <!-- mobile view -->
+            <div class="container mobilehomepage">
+                <div class="row">
+
+
+                    <nav class="navbar navbar-default  navbar-fixed-top" id="sticky-header " style="background-color: #ffff;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="container-fluid">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                                                <span class="sr-only">Toggle navigation</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                            </button>
+                                        <a href="https://lookinmena.com">
+                                            <img src="https://lookinmena.com/wp-content/themes/lookinmena/assets/images/favicon.png" alt="lookinMENA logo">
+                                        </a>
+                                    </div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                                        <ul class="nav navbar-nav">
+                                            <ul class="nav navbar-nav">
+                                                <li class="dropdown">
+                                                    <!--<a href="https://lookinmena.com/online_activities_categories/all/" >المسابقات</a>-->
+                                                    <a href="https://lookinmena.com/online_activities_categories/all/"> المسابقات العالمية</a>
+                                                </li>
+                                            </ul>
+                                            <!--المسابقات -->
+                                            <!--المنح -->
+
+                                            <ul class="nav navbar-nav">
+                                                <li class="dropdown">
+
+                                                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                                aria-haspopup="true" aria-expanded="false">المنح الجامعية <span
+                                                                        class="caret"></span></a>-->
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">المنح الجامعية<span
+                                                                class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                        <!--<li><a
+                                                                            href="https://lookinmena.com/scholarships_categories/%D8%A8%D9%83%D8%A7%D9%84%D9%88%D8%B1%D9%8A%D9%88%D8%B3">- بكالوريوس</a>
+                                                            </li>-->
+                                                        <li><a href="https://lookinmena.com/scholarships_categories/%D8%A8%D9%83%D8%A7%D9%84%D9%88%D8%B1%D9%8A%D9%88%D8%B3">- بكالوريوس</a>
+                                                        </li>
+                                                        <!--<li><a
+                                                                            href="https://lookinmena.com/scholarships_categories/master">- ماجستير</a>
+                                                            </li>-->
+                                                        <li><a href="https://lookinmena.com/scholarships_categories/master">- ماجستير</a>
+                                                        </li>
+                                                        <!--<li><a
+                                                                            href="https://lookinmena.com/scholarships_categories/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%D8%A7%D9%87">- دكتوراه</a>
+                                                            </li>-->
+                                                        <li><a href="https://lookinmena.com/scholarships_categories/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%D8%A7%D9%87">- دكتوراه</a>
+                                                        </li>
+
+                                                        <li role="separator" class="divider"></li>
+                                                        <!--<li><a href="https://lookinmena.com/universities-profile">- جامعات
+                                                                            ال MENA</a></li>-->
+                                                        <li><a href="https://lookinmena.com/universities-profile">-  جامعات الـ MENA</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <!--المنح -->
+                                            <!--المقالات -->
+                                            <ul class="nav navbar-nav">
+
+                                                <!--<li><a class="nav-link" href="https://lookinmena.com/articles/">مقالات</a></li>-->
+                                                <li><a class="nav-link" href="https://lookinmena.com/articles/">مقالات</a></li>
+
+                                            </ul>
+                                            <!--المقالات -->
+                                            <!--من نحن -->
+                                            <ul class="nav navbar-nav">
+
+                                                <!--<li><a class="nav-link" href="https://lookinmena.com/team_members/">من نحن</a></li>-->
+                                                <li><a class="nav-link" href="https://lookinmena.com/team_members/">من نحن</a></li>
+
+                                            </ul>
+                                            <!--من نحن -->
+                                            <ul class="nav navbar-nav">
+                                                <a id="mobile-menu-button" class="waves" href="#"><i class="fa fa-angle-down"></i></a>
+                                                <ul class="menu clearfix" id="menu">
+
+                                                    <!-- ngIf: !is_logged_in -->
+                                                    <li class="login m-t-7" ng-if="!is_logged_in">
+                                                        <!--<a id="sign_in" class="btn bordered" href="#login-form-container">انشئ حساب</a>-->
+                                                        <a id="sign_in" class="btn bordered" href="#login-form-container">أنشئ حساب</a>
+                                                        <div id="login-form-container">
+                                                            <!--<h4 style="box-shadow: 0px 2px 5px 1px grey; background-color: #002626">
+                                                                    إنشاء
+                                                                    حساب مجاني</h4>-->
+                                                            <h4 style="box-shadow: 0px 2px 5px 1px grey; background-color: #002626">إنشاء حساب مجاني</h4>
+                                                            <form class="login-form ng-pristine ng-valid">
+                                                                <fieldset>
+                                                                    <!--<h5>عند إنشاء حساب سيصبح بإمكانك</h5><br>-->
+                                                                    <h5>عند إنشاء حساب سيصبح بإمكانك</h5><br>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-6">
+                                                                            <div class="bell-style"><i class="fa fa-bell"></i></div>
+                                                                            <!--<h6 class="h6h6">تحديد الاشعارات التي ترغب باستلامها</h6>-->
+                                                                            <h6 class="h6h6">تحديد الاشعارات التي ترغب باستلامها</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-6">
+
+                                                                            <div class="pointer-style"><i class="fa fa-mouse-pointer"></i></div>
+                                                                            <!--<h6 class="h6h6">معرفة طريقة المشاركة بالفرص التعليميةوالترفيهية </h6>-->
+                                                                            <h6 class="h6h6">معرفة طريقة المشاركة بالفرص التعليميةوالترفيهية</h6>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="loglog">
+                                                                        <!--<button class="btn btn-default-1 waves fbColor" ng-click="fb_log()"> أنشئ حساباً عن طريق الفيسبوك <i class="fa fa-facebook"></i></button>
+                                                                            <button class="btn btn-default-1 waves gmColor" ng-click="gm_log()" style="background-color: #bb4232;"> أنشئ حساباً عن طريق الجيميل <i class="fa fa-google"></i></button>-->
+                                                                        <button class="btn btn-default-1 waves fbColor" ng-click="fb_log()">أنشئ حساباً عن طريق الفيسبوك<i class="fa fa-facebook"></i></button>
+                                                                        <button class="btn btn-default-1 waves gmColor" ng-click="gm_log()" style="background-color: #bb4232;">أنشئ حساباً عن طريق الجيميل<i class="fa fa-google"></i></button>
+                                                                    </div>
+                                                                </fieldset>
+                                                            </form>
+                                                        </div>
+                                                        <!-- login-form-container -->
+                                                    </li>
+                                                    <!-- end ngIf: !is_logged_in -->
+
+                                                    <!--profile dropdown-->
+                                                    <li class="profile-dropdown" ng-if="is_logged_in">
+
+                                                        <button class="btn btn-default-1 waves" type="button" data-toggle="dropdown"><img style="width: 50px;" ng-src="{{user_pic}}"> {{user_name}}
+                                                            </button>
+                                                        <ul class="dropdown-menu">
+                                                            <!--<li><a href="/profile">حسابك</a>-->
+                                                            <li><a href="/profile">حسابك</a>
+                                                            </li>
+                                                            <!--<li><a class="hand" ng-click="logout_user()">تسجيل الخروج</a>-->
+                                                            <li><a class="hand" ng-click="logout_user()">تسجيل الخروج</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <!--notifications dropdown-->
+                                                    <li class="notification-dropdown" ng-if="is_logged_in">
+                                                        <button class="btn btn-default-1 waves" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html" ng-click="view_noti()">
+                                                                <i class="red_bill" aria-hidden="true" ng-class="{'fa fa-bell-o':unseen_noti == 0, 'fa fa-bell':unseen_noti != 0}">{{unseen_noti != 0?unseen_noti:''}}</i>
+                                                            </button>
+
+                                                        <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel" style="height: 450px;">
+                                                            <div class="notification-heading">
+                                                                <!--<h5 class="menu-title">اشعارات</h5>-->
+                                                                <h5 class="menu-title">اشعارات</h5>
+                                                            </div>
+                                                            <li class="divider"></li>
+                                                            <div id="scrollbar_style" class="notifications-wrapper" style="overflow: auto;height: 85%">
+                                                                <div ng-repeat="noti in user_notifications| orderBy: 'post_created': true" ng-class="{'not_opened': noti.post_opened == 0}">
+                                                                    <a href="{{noti.post_link}}" ng-click="open_noti(noti, $index)">
+                                                                        <div class="notification-item">
+                                                                            <span class="item-title" ng-bind-html="noti.post_title"></span> <small>({{noti.post_type}})</small>
+                                                                        </div>
+                                                                    </a>
+                                                                    <li class="divider"></li>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </ul>
+                                                    </li>
+
+                                                </ul>
+                                            </ul>
+                                            <ul class="nav navbar-nav">
+                                                <li><a class="nav-link" id="lang_en" onclick="change_language(2)">English</a></li>
+                                            </ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- HEADER -->
+        <style type="text/css">
+            .swal-icon--info {
+                display: none;
+            }
+            
+            .swal-footer {
+                text-align: center;
+                padding-bottom: 50px;
+            }
+            
+            #overlay-loading {
+                top: 0;
+                left: 0;
+                position: absolute;
+                margin: auto;
+            }
+        </style>
+        <!-- <script type="text/javascript">
+                    
+
+                    var divv = document.createElement("div");
+                divv.innerHTML = '<div style="color:#000;font-size: 23px;padding-top: 20px;">أهمية كورس IELTS لطلاب المرحلة الثانوية وما بعدها<br /> الثلاثاء 28 أغسطس / آب - 10 م بتوقيت دمشق / القاهرة<br /> في استضافة لايف للاستاذ محمد ملحم على جروب <br /><span><a href="https://www.facebook.com/groups/LiMcommunity/" target="_blank" style="text-decoration: underline;">lookinmena community</a></span><br><div>';
+                swal({
+                    title: "",
+                    content: divv,
+                    icon: "info",
+                });
+
+                $('.swal-button--confirm').text('اضغط هنا');
+
+                $('.swal-button--confirm').click(function(){
+                    window.open('https://www.facebook.com/groups/LiMcommunity/');
+                });
+
+            </script> -->
+        <script type="text/javascript">
+            function change_language(lang) {
+                if (lang == 1) { //arabic
+                    document.cookie = "lang=Ar";
+                } else { //english
+                    document.cookie = "lang=En";
+                }
+                location.reload();
+            }
+        </script>
+        <script type="text/javascript" src="https://lookinmena.com/wp-content/themes/lookinmena/assets/js/scholar_assesment.js"></script>
+        <!--Partners style-->
+        <style>
+            .owl-carousel .owl-item img {
+                /* display: block; */
+                width: 100%;
+                -webkit-transform-style: preserve-3d;
+            }
+        </style>
+        <style type="text/css">
+            .rounded-images-carousel img {
+                border: none;
+                border-radius: 0;
+                margin: 0 auto;
+                -webkit-transition: all 0.25s;
+                transition: all 0.25s;
+            }
+            
+            .about-me.style-2 .about-me-thumbnail {
+                width: 100%;
+                margin-bottom: 0;
+                height: auto;
+            }
+            
+            .mobilehomepage {
+                font-size: 20px;
+            }
+            
+            .about-me {
+                border-top: 3px solid #f49900;
+                margin-bottom: 50px;
+            }
+            
+            .about-me:hover .about-me-thumbnail>a {
+                bottom: 0;
+                opacity: 1;
+            }
+            
+            .about-me:hover .about-me-thumbnail>a:hover {
+                opacity: 0.75;
+            }
+            
+            .about-me:hover .about-me-details h4 {
+                color: #f49900;
+            }
+            
+            .about-me:hover .about-me-details>a {
+                color: #f49900;
+            }
+            
+            .about-me:hover .about-me-details>a:after {
+                border-bottom-color: #f49900;
+            }
+            
+            .about-me:hover .about-me-details>a:hover {
+                color: #464646;
+            }
+            
+            .about-me:hover .about-me-details>a:hover:after {
+                border-bottom-color: #464646;
+            }
+            
+            .about-me:hover .about-me-thumbnail img {
+                -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+            /* STYLE 2 */
+            
+            .about-me.style-2:hover .about-me-details h6 {
+                color: #fff;
+            }
+            
+            .about-me.style-2 .about-me-thumbnail {
+                margin-bottom: 0;
+            }
+            
+            .about-me.style-2:hover {
+                border-top-color: #f49900;
+            }
+            
+            .owl-carousel,
+            .owl-carousel .owl-item {
+                -webkit-tap-highlight-color: transparent;
+                position: relative
+            }
+        </style>
+
+        <style>
+            .story_path {
+                width: 100%;
+                height: 340px;
+                background: white;
+                margin: 35px 0 25px;
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px 10px 10px 10px;
+                box-shadow: -6px 10px 40px rgba(234, 229, 244, 0.7);
+                transform: scale(0.95);
+                transition: box-shadow 0.5s, transform 0.5s;
+                border: solid 1px #e1e1e1
+            }
+            
+            .story_path:hover {
+                transform: scale(1);
+                box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+                border: none;
+                border-bottom: 5px solid #52b694;
+            }
+            
+            .path i {
+                color: #52b694;
+                margin-top: 25px;
+                cursor: pointer;
+            }
+            
+            .path_text {
+                padding-top: 35px;
+            }
+            
+            .path-header h2 {
+                color: #52b694;
+                padding-top: 100px;
+            }
+            
+            .path-header h6 {
+                color: #333;
+            }
+            
+            .path p {
+                font-size: 20px;
+                color: #1f2424;
+                margin-left: 20px;
+                margin-right: 25px;
+            }
+            
+            span {
+                font-weight: bold;
+            }
+            
+            .path_text i {
+                color: #52b694;
+            }
+            
+            .story_path img {
+                width: auto;
+                height: 120px;
+                padding-top: 25px;
+            }
+        </style>
+        <!-- cood for meee -->
+
+
+        <div class="path-header text-center">
+            <div class="container">
+
+                <h2>مسار الدراسة الجامعية</h2>
+                <h6>ضمن هذا المسار، يوجد الكثير من الفرص المتعلقة بالدراسة الجامعية بشقيها المنح والمأجورة
+
+                </h6>
+            </div>
+        </div>
+
+        <div class="path">
+
+            <div class="container">
+                <!--start one row -->
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a href="https://lookinmena.com/scholarships/" target="_blank">
+                            <div class="story_path card4">
+                                <div class="path_container ">
+                                    <div class="path_info">
+                                        <div class="path_media text-center">
+
+
+                                            <img src="./assets/images/high-education/scholarships.png" alt="">
+                                        </div>
+
+
+                                    </div>
+                                    <div class="path_text text-center">
+
+                                        <p>
+                                            لاستعراض <span style="color: red"> المنح الدراسية المفتوحة حالياً </span> والتقديم عليها
+                                        </p>
+                                        <br>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </a>
+
+                    </div>
+                    <!---->
+                    <div class="col-sm-4">
+                        <a href="https://lookinmena.com/scholarship-test/" target="_blank">
+                            <div class="story_path card1">
+                                <div class="path_container ">
+                                    <div class="path_info">
+                                        <div class="path_media text-center">
+
+                                            <img src="./assets/images/high-education/scholarship-test.png" alt="">
+                                        </div>
+
+
+                                    </div>
+                                    <div class="path_text text-center">
+                                        <p>لمعرفة فرص حصولك على منحة دراسية، قم بتجريب <span style="color: red">اختبار الحصول على منحة دراسية </span>عن طريق الإجابة عن بعض الأسئلة، وسنقوم بتقديم أفضل النصائح لك بناءً على إجاباتك</p>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </a>
+
+                    </div>
+                    <!---->
+
+                    <div class="col-sm-4">
+                        <a href="https://lookinmena.com/category/popular-scholarships/scholarships-guide/" target="_blank">
+                            <div class="story_path card2">
+                                <div class="path_container ">
+                                    <div class="path_info">
+                                        <div class="path_media text-center">
+                                            <img src="./assets/images/high-education/scholarships-guide.png" alt="">
+
+
+
+                                            <div class="path_text text-center">
+
+
+                                                <p>لمعرفة خطوات التقديم على أغلب المنح العالمية، <span style="color: red">اقرأ دليل الحصول على منحة</span></p>
+                                                <br>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                    <!---->
+
+
+
+                </div>
+                <!--End one row -->
+                <!--start two row -->
+                <!--start one row -->
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a href="https://lookinmena.com/category/personal-experience/" target="_blank">
+                            <div class="story_path card3">
+                                <div class="path_container  ">
+                                    <div class="path_info">
+                                        <div class="path_media text-center">
+
+
+                                            <img src="./assets/images/high-education/personal-experience.png" alt="">
+                                        </div>
+
+
+                                    </div>
+                                    <div class="path_text text-center">
+
+                                        <p>يمكنك قراءة <span style="color: red">تجارب طلاب حصلوا على منح</span> للاستفادة من خبراتهم</p>
+                                        <br>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                        </a>
+
+
+                    </div>
+                    <!---->
+                    <div class="col-sm-4">
+                        <a href="https://lookinmena.com/category/study-abroad-2/" target="_blank">
+                            <div class="story_path card5">
+                                <div class="path_container ">
+                                    <div class="path_info">
+                                        <div class="path_media text-center">
+                                            <img src="./assets/images/high-education/study-abroad.png" alt="">
+
+
+                                            <div class="path_text text-center">
+
+
+                                                <p>
+                                                    لمعرفة <span style="color: red">معلومات عن الدراسة في الكثير من الدول حول العالم،</span>، اختر الدولة التي تناسبك من هنا
+                                                </p>
+                                                <br>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+
+
+                    </div>
+                    <!---->
+                    <div class="col-sm-4 ">
+                        <a href="https://lookinmena.com/universities-profile/" target="_blank">
+                            <div class="story_path card6">
+                                <div class="path_container ">
+                                    <div class="path_info">
+                                        <div class="path_media text-center">
+                                            <img src="./assets/images/high-education/universities-profile.png" alt="">
+                                        </div>
+                                        <div class="path_text text-center" style="margin-top: -9px">
+
+                                            <p>لاكتشاف وعرض <span style="color: red"> جميع الجامعات الموجودة ضمن منطقة المينا (الشرق الأوسط وشمال افريقيا)</span>، اختر التخصص والدرجة والدولة التي ترغب بهم من هنا</p>
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                            <!---->
+                        </a>
+
+                    </div>
+                    <!--End two row -->
+                </div>
+
+            </div>
+            <!-- cood for meee -->
+            <!-- FOOTER CONTAINER -->
+            <footer class="probootstrap-footer footer_view" id="footer-container">
+                <div class="probootstrap-backtotop"><a href="#" class="js-backtotop"><i class="icon-chevron-thin-up"></i></a>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="probootstrap-footer-widget">
+                                <h4>تصفح</h4>
+                                <a class="scholars-footer" href="#recent-scholars">المنح الجامعية</a>
+                                <a href="https://lookinmena.com/online_activities_categories/all/">المسابقات العالمية</a>
+                                <a href="https://lookinmena.com/universities-profile/">جامعات الMENA</a>
+                                <a href="https://lookinmena.com/articles/">المقالات</a>
+                                <a href="https://lookinmena.com/scholarship-test/">اختبار الحصول على منحة</a>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-3">
+					<div class="probootstrap-footer-widget">
+						<h4>فريق العمل</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+							laboris nisi ut aliquip ex ea commodo consequat<a href="#">مشاهدة المزيد</a></p>
+					</div>
+				</div> -->
+                        <!-- col-md-push-1 -->
+                        <div class="col-md-5">
+                            <div class="probootstrap-footer-widget">
+                                <h4>حسابك</h4>
+                                <a class="create-account-footer" href="#login-form-container">أنشئ حساب</a>
+                            </div>
+                            <div class="probootstrap-footer-widget">
+                                <h4>تواصل معنا</h4>
+                                <span><i class="fa fa-envelope"></i> lookinmena@gmail.com</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center border-top">
+                            <ul class="probootstrap-header-social">
+                                <li><a href="https://www.facebook.com/lookinmena"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/lookinmena"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/lookinmena/"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UC1cGjsNSSh9a_xiFEctxeVg"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
+                            <p>LookInMENA - 2019 &copy; All rights reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+            <!-- FOOTER CONTAINER -->
+
+        </div>
+        <!-- MAIN CONTAINER -->
+
+        <!-- LOADING CIRCLE -->
+        <div class="loading">
+            <div id="loading-img"></div>
+        </div>
+
+        <!-- SCROLL UP -->
+        <a id="scroll-up" class="waves"><i class="fa fa-angle-up"></i></a>
+
+
+
+</body>
+
+</html>
